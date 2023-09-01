@@ -48,7 +48,7 @@
                 // 1
                 {
                     name: 'Opening Session',
-                    title: '<strong class="text-secondary">Remarks</strong>',
+                    title: '<strong class="text-secondary">Welcoming Remarks</strong>',
                     time: '09:00 - 09:15 WIB (UTC +7:00)',
                     timestart: '09:00',
                     timeend: '09:15',
@@ -115,7 +115,7 @@
                     title: '<strong class="text-secondary">Closing Session</strong>',
                     time: '16:25 - 16:30 WIB (UTC +7:00)',
                     timestart: '16:25',
-                    timeend: '16:45',
+                    timeend: '16:30',
                 },
             ]
             var sessionName = $('#session-name'); // Example: Session 1
