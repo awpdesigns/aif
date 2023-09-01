@@ -24,7 +24,7 @@ body {
                 position:absolute;
                 top:0;
                 right:0;
-                background:url('/aif/assets/imgs/icon.png');
+                background:url('https://awpdesigns.github.io/aif/assets/imgs/icon.png');
                 background-size:contain;
             }
             &::before {
@@ -107,7 +107,7 @@ body {
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background: url('/aif/assets/imgs/background.jpg') no-repeat center center;
+    background: url('https://awpdesigns.github.io/aif/assets/imgs/background.jpg') no-repeat center center;
     background-size: cover;
 
     .error-template {
@@ -177,7 +177,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    background: url('/aif/assets/imgs/background.jpg') no-repeat center center;
+    background: url('https://awpdesigns.github.io/aif/assets/imgs/background.jpg') no-repeat center center;
     background-size: cover;
 
     .hero-image {
@@ -340,7 +340,7 @@ body {
 }
 .main-nav {
     padding: 1rem 1.5rem;
-    background: url('/aif/assets/imgs/background.jpg') no-repeat center bottom;
+    background: url('https://awpdesigns.github.io/aif/assets/imgs/background.jpg') no-repeat center bottom;
     background-size: cover;
     .nav-wrapper {
         display: flex;
@@ -433,7 +433,7 @@ body {
             display: none;
         }
         &#nav-info-detail {
-            background: url('/aif/assets/imgs/background.jpg') no-repeat center center;
+            background: url('https://awpdesigns.github.io/aif/assets/imgs/background.jpg') no-repeat center center;
             background-size: cover;
             color: #fff;
             border-top: 6px solid var(--#{$prefix}primary);
@@ -551,7 +551,7 @@ body {
             height: 100vw;
             overflow: hidden;
             position: relative;
-            background: url('/aif/assets/imgs/background.jpg') no-repeat center center;
+            background: url('https://awpdesigns.github.io/aif/assets/imgs/background.jpg') no-repeat center center;
             background-size: cover;
 
             .error-template {
@@ -621,7 +621,7 @@ body {
             justify-content: space-between;
             align-items: center;
             gap: 1rem;
-            background: url('/aif/assets/imgs/background.jpg') no-repeat center center;
+            background: url('https://awpdesigns.github.io/aif/assets/imgs/background.jpg') no-repeat center center;
             background-size: cover;
 
             .hero-image {
@@ -660,7 +660,7 @@ body {
         }
         .main-nav {
             padding: 1rem 1.5rem;
-            background: url('/aif/assets/imgs/background.jpg') no-repeat center bottom;
+            background: url('https://awpdesigns.github.io/aif/assets/imgs/background.jpg') no-repeat center bottom;
             background-size: cover;
             .nav-wrapper {
                 display: flex;
@@ -742,7 +742,7 @@ body {
                 overflow-y: auto;
                 padding: 1.5rem;
                 &#nav-info-detail {
-                    background: url('/aif/assets/imgs/background.jpg') no-repeat center center;
+                    background: url('https://awpdesigns.github.io/aif/assets/imgs/background.jpg') no-repeat center center;
                     background-size: cover;
                     color: #fff;
                     border-top: 6px solid var(--#{$prefix}primary);
