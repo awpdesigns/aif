@@ -73,7 +73,7 @@
                 content: "";
                 position: absolute;
                 width: 190%;
-                height: 160%;
+                height: calc(63vh + 24px);
                 z-index: -1;
                 border-radius: inherit;
                 background: rgba(var(--#{$prefix}white-rgb), 0.85) !important;
