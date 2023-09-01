@@ -294,19 +294,67 @@
                     const placeid = place.place_id;
                     const name = place.name;
                     const address = place.formatted_address;
+                    const adrAddress = place.adr_address;
                     const rating = place.rating;
                     const userRatingsTotal = place.user_ratings_total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") ? place.user_ratings_total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 'N/A';
                     const priceLevel = place.price_level;
                     const types = place.types;
                     const photo = place.photos;
                     const photoUrl = photo[0].getUrl() ? photo[0].getUrl() : 'assets/imgs/android-chrome-512x512.png';
-                    // Check if the place is open from the place object
-                    const isOpen = place.opening_hours ? '<span class="text-green bg-green-subtle">Open Now</span>' : '<span class="text-red bg-red-subtle">Closed</span>';
+                    // Check if the place is open or not
+                    const isOpen = place.opening_hours;
+                    // <span class="text-green bg-green-subtle">Open Now</span>
+                    // Check if the place is open or not with each place id
+                    if (isOpen) {
+                        service.getDetails({
+                            placeId: placeid,
+                            // Get opening hours, if the place is open or not
+                            fields: ['opening_hours'],
+                        }, function (place, status) {
+                            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                                var now = new Date();
+                                var day = now.getDay();
 
+                                // Get opening hours
+                                var thehours = place.opening_hours;
+
+                                if (thehours) {
+                                    var periods = thehours.periods[day] || thehours.periods[0];
+                                } else {
+                                    var periods = false;
+                                }
+
+                                // Check if the place is open or not
+                                if (periods) {
+                                    var open = periods.open.time;
+                                    var close = periods.close.time;
+
+                                    // Format hours
+                                    var fopen = open.slice(0, 2) + ':' + open.slice(2, 4);
+                                    var fclose = close.slice(0, 2) + ':' + close.slice(2, 4);
+
+                                    // Add AM or PM
+                                    fopen = fopen + ' ' + (open < 1200 ? 'AM' : 'PM');
+                                    fclose = fclose + ' ' + (close < 1200 ? 'AM' : 'PM');
+
+                                    // Check if the place is open or not
+                                    if (now >= open && now <= close) {
+                                        $('#' + placeid + ' .card-body').append('<small class="text-green bg-green-subtle fs-xs">Open Now</small> <small class="text-muted fs-xs">| ' + fopen + ' - ' + fclose + '</small>');
+                                    } else {
+                                        $('#' + placeid + ' .card-body').append('<small class="text-red bg-red-subtle fs-xs">Closed</small> <small class="text-muted fs-xs">| Open at ' + fopen + ' - ' + fclose + '</small>');
+                                    }
+                                } else {
+                                    $('#' + placeid + ' .card-body').append('<small class="text-red bg-red-subtle fs-xs">Closed</small>');
+                                }
+                            }
+                        });
+                    } else {
+                        $('#' + placeid + ' .card-body').append('<small class="text-red bg-red-subtle fs-xs">Closed</small>');
+                    }
 
                     // console.log(place);
 
-                    const card = `<div class="card" data-place-id="${placeid}"><div class="card-image"><img src="${photoUrl}" class="img-fluid" alt="${name}" /><small class="rating" aria-label="Rating"><i class="bx bxs-star text-secondary m-0"></i> ${rating} <small class="text-muted fs-xs">(${userRatingsTotal})</small></small></div><div class="card-body"><h5 class="card-title">${name}</h5><p class="card-text mb-0 address">${address}</p></div></div>`;
+                    const card = `<div class="card" id="${placeid}"><div class="card-image"><img src="${photoUrl}" class="img-fluid" alt="${name}" /><small class="rating" aria-label="Rating"><i class="bx bxs-star text-secondary m-0"></i> ${rating} <small class="text-muted fs-xs">(${userRatingsTotal})</small></small></div><div class="card-body"><h5 class="card-title">${name}</h5><p class="card-text mb-0 address excerpt-2">${address}</p></div></div>`;
                     resultsDiv.append(card);
 
                     // On click card, zoom to the place
