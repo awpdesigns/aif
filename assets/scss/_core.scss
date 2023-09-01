@@ -456,6 +456,15 @@ body {
         border-radius: 0.5rem;
         font-size: 1.15rem;
         font-weight: 600;
+        .layout-list-title {
+            padding: 0.25rem 0.5rem;
+            background: var(--#{$prefix}primary);
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            border-radius: 0.25rem;
+        }
     }
 }
 .main-nav-mobile {
