@@ -305,7 +305,7 @@
 
                     // console.log(place);
 
-                    const card = `<div class="card" data-place-id="${placeid}"><div class="card-image"><img src="${photoUrl}" class="img-fluid" alt="${name}" /><small class="rating" aria-label="Rating"><i class="bx bxs-star text-secondary m-0" /> ${rating} <small class="text-muted fs-xs">(${userRatingsTotal})</small></small></div><div class="card-body"><h5 class="card-title">${name}</h5><p class="card-text mb-0 address">${address}</p></div></div>`;
+                    const card = `<div class="card" data-place-id="${placeid}"><div class="card-image"><img src="${photoUrl}" class="img-fluid" alt="${name}" /><small class="rating" aria-label="Rating"><i class="bx bxs-star text-secondary m-0"></i> ${rating} <small class="text-muted fs-xs">(${userRatingsTotal})</small></small></div><div class="card-body"><h5 class="card-title">${name}</h5><p class="card-text mb-0 address">${address}</p></div></div>`;
                     resultsDiv.append(card);
 
                     // On click card, zoom to the place
