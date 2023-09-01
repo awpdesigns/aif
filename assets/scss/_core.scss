@@ -177,7 +177,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    background: url('/assets/imgs/background.jpg') no-repeat center center;
+    background: url('assets/imgs/background.jpg') no-repeat center center;
     background-size: cover;
 
     .hero-image {
@@ -789,33 +789,3 @@ body {
 @mixin white-gradient {
 	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 }
-// .slider {
-//     width: 100%;
-//     overflow: hidden;
-//     position: relative;
-//     // padding: 1rem;
-
-//     .slick-list {
-//         overflow: hidden;
-//         text-align: center;
-//         padding: 0 1rem;
-
-//         .slide {
-//             padding: 1rem;
-//             display: flex;
-//             align-items: center;
-//             justify-content: center;
-//             height: 90px;
-
-//             img {
-//                 max-width: 100%;
-//                 max-height: 100%;
-//                 object-fit: contain;
-
-//                 &:not([alt="BKPM"]) {
-//                     width: 100px;
-//                 }
-//             }
-//         }
-//     }
-// }
