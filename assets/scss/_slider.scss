@@ -101,6 +101,10 @@ $animationSpeed: 10s;
     .slick-track {
         height: 100% !important;
         padding: 0;
+
+        .slide img {
+            width: 100%;
+        }
     }
 
     .slick-dots {
