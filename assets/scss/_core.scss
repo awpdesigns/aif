@@ -187,10 +187,24 @@ body {
     background-size: cover;
 
     .hero-image {
-        max-width: 50%; // clamp(175px, 100vw, 256px)
+        width: 40%;
+        max-width: 40%;
         img {
             width: 100%;
         }
+    }
+
+    .img-tagline {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 150px;
+    }
+
+    .img-website {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
     }
 
     .date-time {
@@ -658,7 +672,8 @@ body {
             background-size: cover;
 
             .hero-image {
-                max-width: 50%; // clamp(175px, 100vw, 256px)
+                width: 40%;
+                max-width: 40%;
                 img {
                     width: 100%;
                 }

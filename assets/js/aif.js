@@ -123,7 +123,7 @@
             var sessionTime = $('#session-time'); // Example: 08:00 AM
 
             // Set hours:minutes to var HM
-            var HM = hours + ':' + minutes;
+            var HM = formatNumber(hours) + ':' + formatNumber(minutes);
             //console.log(HM);
             // Update session data based on session time start and end
             // 1
