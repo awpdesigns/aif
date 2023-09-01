@@ -413,11 +413,87 @@
             // On click marker, set content and open infowindow
             google.maps.event.addListener(marker, 'click', function () {
 
-                infowindow.setContent('<div class="d-flex flex-column gap-1 text-center"><strong>' + place.name + '</strong><span class="text-muted">' + place.formatted_address + '</span></div>');
+                infowindow.setContent('<div class="d-flex flex-column gap-1 text-center"><strong>' + place.name + '</strong><span class="text-muted">' + place.formatted_address + '</span><a href="#" class="mt-2 get-route" data-place="' + place.place_id + '">Get Route</a></div>');
                 infowindow.open(map, this);
                 toggleBounce(this);
             });
         }
+        // Get route (prevent multiple route)
+        function getRoute(placeid) {
+            // Get current location
+            var currentLocation = new google.maps.LatLng(-6.218026113247089, 106.80902260341915); // Set current location (The Sultan Hotel & Residence Jakarta)
+            // Get destination location from place id
+            var destination = placeid;
+            // Get directions
+            var directionsService = new google.maps.DirectionsService();
+            // Get directions renderer
+            var directionsRenderer = new google.maps.DirectionsRenderer();
+            // Set directions renderer to map
+            directionsRenderer.setMap(map);
+            // Get directions
+            directionsService.route(
+                {
+                    origin: currentLocation,
+                    destination: { placeId: destination },
+                    travelMode: google.maps.TravelMode.DRIVING,
+                },
+                function (response, status) {
+                    if (status === 'OK') {
+                        // Set directions renderer to map
+                        directionsRenderer.setDirections(response);
+                        // Set zoom level
+                        map.setZoom(18);
+                        // Set center map
+                        map.setCenter(currentLocation);
+
+                        // Get route distance and duration
+                        var route = response.routes[0];
+                        var distance = route.legs[0].distance.text;
+                        var duration = route.legs[0].duration.text;
+
+                        // Set content to infowindow and open it
+                        infowindow.setContent('<div class="d-flex flex-column gap-1 text-center"><strong>' + distance + ' (' + duration + ')</strong><span class="text-muted">Estimated travel time</span></div>');
+                    } else {
+                        $('.map-wrapper').append('<div class="alert alert-danger alert-direction fade show" role="alert">Directions request failed due to ' + status + '. Please try again</div>');
+                        // Remove alert after 5 seconds
+                        setTimeout(function () {
+                            $('.alert-direction').fadeOut('slow', function () {
+                                $(this).remove();
+                            });
+                        }, 3000);
+                    }
+                }
+            );
+
+            // Clear Route Button
+            $('#clear-route').each(function () {
+                // Check if there is a route or not on the map
+                if (directionsRenderer.getMap() != null) {
+                    $(this).removeClass('d-none');
+                } else {
+                    $(this).addClass('d-none');
+                }
+                $(this).on('click', function (e) {
+                    var jakarta = new google.maps.LatLng(-6.1753924, 106.8271528);
+                    e.preventDefault();
+                    // Clear route
+                    directionsRenderer.setMap(null);
+                    // Close infowindow
+                    infowindow.close();
+                    // Set zoom level
+                    map.setZoom(13);
+                    // Set center map
+                    map.setCenter(jakarta);
+                    // Hide clear route button
+                    $(this).addClass('d-none');
+                });
+            });
+        }
+        $('body').on('click', '.get-route', function (e) {
+            e.preventDefault();
+            var placeid = $(this).data('place');
+            getRoute(placeid);
+        });
         function toggleBounce(marker) {
             if (marker.getAnimation() !== null) {
                 marker.setAnimation(null);

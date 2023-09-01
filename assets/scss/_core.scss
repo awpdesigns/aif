@@ -318,6 +318,19 @@ body {
     top: 1rem;
     right: 1rem;
 }
+#clear-route {
+    position: absolute;
+    right: 1rem;
+    top: calc(1rem + 3rem);
+}
+.alert-direction {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    font-size: .9rem;
+    padding: 0.5rem;
+    max-width: 85%;
+}
 #results {
     min-height: 550px;
     max-height: 550px;
