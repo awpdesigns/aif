@@ -63,6 +63,12 @@ body {
             background: var(--primary);
         }
     }
+    .tab-pane {
+        height: calc(63vh - -25px);
+        background: var(--#{$prefix}primary);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 }
 
 .mfp-bg {
