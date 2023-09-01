@@ -207,6 +207,41 @@ body {
         right: 1rem;
     }
 
+    #weather {
+        position: absolute;
+        right: 1rem;
+        top: 2.75rem;
+
+        [loc="auto"] {
+            display: flex !important;
+            height: 40px;
+
+            .ww-box {
+                display: flex !important;
+                height: auto !important;
+
+                .ww_current {
+                    display: flex;
+                    justify-content: flex-end;
+                    flex-direction: row;
+                    width: 100%;
+                    line-height: 1 !important;
+
+                    .ww_icon {
+                        display: flex !important;
+                        width: fit-content !important;
+                        margin-top: 0 !important;
+                        max-width: 40px;
+                        margin-left: 4px;
+                    }
+                    .ww_cond {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+
     .date-time {
         display: flex;
         flex-direction: column;
