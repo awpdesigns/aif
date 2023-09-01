@@ -85,7 +85,7 @@ $animationSpeed: 10s;
     aspect-ratio: 1/1;
 
     &::before {
-        content: url('/assets/imgs/logo/aif-new.png');
+        content: url('https://awpdesigns.github.io/aif/assets/imgs/logo/aif-new.png');
         position: absolute;
         top: 0;
         left: 0;
@@ -95,7 +95,7 @@ $animationSpeed: 10s;
         width: 100%;
         height: 100%;
         color: white;
-        background: url('/assets/imgs/background.jpg') no-repeat center center;
+        background: url('https://awpdesigns.github.io/aif/assets/imgs/background.jpg') no-repeat center center;
         background-size: cover;
     }
     .slick-track {
