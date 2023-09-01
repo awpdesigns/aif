@@ -236,11 +236,12 @@
         var infowindow;
         var request;
         var markers = [];
-        function initMap() {
+        async function initMap() {
+            const { Map } = await google.maps.importLibrary("maps");
             var currentLocation = new google.maps.LatLng(-6.218026113247089, 106.80902260341915); // Set current location
             var jakarta = new google.maps.LatLng(-6.1753924, 106.8271528);
             infowindow = new google.maps.InfoWindow();
-            map = new google.maps.Map(document.getElementById('map'), {
+            map = new Map(document.getElementById('map'), {
                 center: jakarta,
                 // Set zoom level
                 zoom: 13,
@@ -304,7 +305,7 @@
 
                     // console.log(place);
 
-                    const card = `<div class="card" data-place-id="${placeid}"><div class="card-image"><img src="${photoUrl}" class="img-fluid" alt="${name}"><small class="rating" aria-label="Rating"><i class="bx bxs-star text-secondary m-0"></i> ${rating} <small class="text-muted fs-xs">(${userRatingsTotal})</small></small></div><div class="card-body"><h5 class="card-title">${name}</h5><p class="card-text mb-0 address excerpt-2">${address}</p><span class="card-text open-time">${isOpen}</span></div></div>`;
+                    const card = `<div className="card" data-place-id="${placeid}"><div className="card-image"><img src="${photoUrl}" className="img-fluid" alt="${name}" /><small className="rating" aria-label="Rating"><i className="bx bxs-star text-secondary m-0" /> ${rating} <small className="text-muted fs-xs">(${userRatingsTotal})</small></small></div><div className="card-body"><h5 className="card-title">${name}</h5><p className="card-text mb-0 address">${address}</p></div></div>`;
                     resultsDiv.append(card);
 
                     // On click card, zoom to the place
