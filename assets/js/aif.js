@@ -124,6 +124,7 @@
 
             // Set hours:minutes to var HM
             var HM = hours + ':' + minutes;
+            //console.log(HM);
             // Update session data based on session time start and end
             // 1
             if (HM >= sessionData[0].timestart && HM <= sessionData[0].timeend) {
