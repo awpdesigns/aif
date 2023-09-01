@@ -2,7 +2,7 @@
     "name": "ASEAN INVESMENT FORUM 2023",
     "description": "ASEAN INVESMENT FORUM 2023",
     "short_name": "AIF 2023",
-    "start_url": "/",
+    "start_url": "https://awpdesigns.github.io/aif/",
     "lang": "en-US",
     "theme_color": "#B12226",
     "background_color": "#ffffff",
@@ -12,40 +12,40 @@
     "developer": "Atas Nalar",
     "icons": [
         {
-            "src": "assets/imgs/favicon.png",
+            "src": "https://awpdesigns.github.io/aif/assets/imgs/favicon.png",
             "sizes": "260x260",
             "type": "image/png"
         },
         {
-            "src": "favicon.ico",
+            "src": "https://awpdesigns.github.io/aif/favicon.ico",
             "sizes": "260x260",
             "type": "image/x-icon"
         },
         {
-            "src": "assets/imgs/android-chrome-192x192.png",
+            "src": "https://awpdesigns.github.io/aif/assets/imgs/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "assets/imgs/android-chrome-192x192.png",
+            "src": "https://awpdesigns.github.io/aif/assets/imgs/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "assets/imgs/android-chrome-256x256.png",
+            "src": "https://awpdesigns.github.io/aif/assets/imgs/android-chrome-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "assets/imgs/android-chrome-512x512.png",
+            "src": "https://awpdesigns.github.io/aif/assets/imgs/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
     "screenshots": [
         {
-            "src": "assets/imgs/screenshot.png",
+            "src": "https://awpdesigns.github.io/aif/assets/imgs/screenshot.png",
             "sizes": "1280x920",
             "type": "image/png"
         }
