@@ -1,0 +1,108 @@
+.an-marquee-js, .an-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+
+    .an-marquee-text-js, .an-marquee-text {
+        display: inline-block;
+    }
+
+    &[data-direction="left"] {
+        .an-marquee-text-js, .an-marquee-text {
+            animation: marquee 8s linear infinite;
+            -webkit-animation: marquee 8s linear infinite;
+        }
+    }
+
+    &[data-direction="right"] {
+        .an-marquee-text-js, .an-marquee-text {
+            animation: marquee 8s linear infinite;
+            -webkit-animation: marquee 8s linear infinite;
+            animation-direction: reverse;
+            -webkit-animation-direction: reverse;
+        }
+    }
+
+    &[data-direction="up"] {
+        .an-marquee-text-js, .an-marquee-text {
+            animation: marqueeUp 8s linear infinite;
+            -webkit-animation: marqueeUp 8s linear infinite;
+            white-space: break-spaces;
+        }
+    }
+
+    &[data-direction="down"] {
+        .an-marquee-text-js, .an-marquee-text {
+            animation: marqueeUp 8s linear infinite;
+            -webkit-animation: marqueeUp 8s linear infinite;
+            animation-direction: reverse;
+            -webkit-animation-direction: reverse;
+            white-space: break-spaces;
+        }
+    }
+
+    &[data-direction="alternateX"] {
+        .an-marquee-text-js, .an-marquee-text {
+            animation: marquee 8s linear infinite;
+            -webkit-animation: marquee 8s linear infinite;
+            animation-direction: alternate;
+            -webkit-animation-direction: alternate;
+        }
+    }
+
+    &[data-direction="alternateY"] {
+        .an-marquee-text-js, .an-marquee-text {
+            animation: marqueeUp 8s linear infinite;
+            -webkit-animation: marqueeUp 8s linear infinite;
+            animation-direction: alternate;
+            -webkit-animation-direction: alternate;
+            white-space: break-spaces;
+        }
+    }
+
+    &[data-hover="pause"] {
+        &:hover {
+            .an-marquee-text-js, .an-marquee-text {
+                animation-play-state: paused;
+                -webkit-animation-play-state: paused;
+            }
+        }
+    }
+}
+
+
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes marqueeUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@-webkit-keyframes marqueeUp {
+    0% {
+        -webkit-transform: translateY(100%);
+    }
+    100% {
+        -webkit-transform: translateY(-100%);
+    }
+}

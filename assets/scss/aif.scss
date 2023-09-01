@@ -1,0 +1,27 @@
+// Import Atas Nalar Bootstrap Functions
+@import "../../node_modules/atasnalar-bootstrap/scss/functions";
+// Import Main Variables
+@import "aif-variables";
+/* [ Atas Nalar Bootstrap - Core ] */
+@import "../../node_modules/atasnalar-bootstrap/scss/atasnalar-bootstrap";
+
+// @import "../../node_modules/atasnalar-bootstrap/scss/variables";
+// @import "../../node_modules/atasnalar-bootstrap/scss/variables-dark";
+// @import "../../node_modules/atasnalar-bootstrap/scss/maps";
+// @import "../../node_modules/atasnalar-bootstrap/scss/mixins";
+// @import "../../node_modules/atasnalar-bootstrap/scss/root";
+// @import "../../node_modules/atasnalar-bootstrap/scss/utilities";
+// @import "../../node_modules/atasnalar-bootstrap/scss/reboot";
+// @import "../../node_modules/atasnalar-bootstrap/scss/type";
+// @import "../../node_modules/atasnalar-bootstrap/scss/broken-image";
+// @import "../../node_modules/atasnalar-bootstrap/scss/images";
+// @import "../../node_modules/atasnalar-bootstrap/scss/containers";
+// @import "../../node_modules/atasnalar-bootstrap/scss/grid";
+// @import "../../node_modules/atasnalar-bootstrap/scss/helpers";
+// @import "../../node_modules/atasnalar-bootstrap/scss/utilities/api";
+
+@import "core";
+@import "marquee";
+@import "slider";
+@import "slick";
+@import "games";
