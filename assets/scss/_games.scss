@@ -19,7 +19,7 @@
     #game-card {
         position: relative;
         padding: 2rem;
-        height: calc(63vh - -68px);
+        height: calc(63vh + 88px);
         overflow-x: hidden;
         overflow-y: auto;
         background: url('https://awpdesigns.github.io/aif/assets/imgs/flag-background.png') no-repeat center center;
@@ -73,7 +73,7 @@
                 content: "";
                 position: absolute;
                 width: 190%;
-                height: 190%;
+                height: 160%;
                 z-index: -1;
                 border-radius: inherit;
                 background: rgba(var(--#{$prefix}white-rgb), 0.85) !important;
